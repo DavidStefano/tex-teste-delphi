@@ -1,0 +1,67 @@
+unit uTransporte;
+
+interface
+
+uses
+Vcl.Dialogs;
+
+type Transporte = class
+
+private
+
+Fnome   :String;
+
+Fmetros :String;
+
+
+
+protected
+
+public
+
+procedure Setnome(const Value: String);
+
+procedure move(const Value: String);
+
+Constructor Create;
+
+Destructor  Destroy; Override;
+
+property nome :String read Fnome write Setnome;
+
+property metros :String read Fmetros write move;
+
+end;
+
+implementation
+
+{ Transporte }
+
+
+
+constructor Transporte.Create;
+begin
+  Setnome('Porche 911');
+  move('100');
+  Setnome('boeing');
+  move('2500');
+end;
+
+destructor Transporte.Destroy;
+begin
+
+  inherited;
+end;
+
+procedure Transporte.move(const Value: String);
+begin
+  Fmetros := Value;
+  ShowMessage(nome + ' moveu ' + metros + ' m');
+end;
+
+procedure Transporte.Setnome(const Value: String);
+begin
+  Fnome := Value;
+end;
+
+end.

@@ -1,0 +1,15 @@
+unit uAviao;
+
+interface
+
+uses uTransporte;
+
+Type aviao = class(Transporte)
+
+
+end;
+
+
+implementation
+
+end.
